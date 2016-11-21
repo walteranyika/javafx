@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="ClickMe.jnlp">
+  <information>
+    <title>ClickMe</title>
+    <vendor>waltersanchez</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="ClickMe.jar" size="7377" download="eager" />
+    <jar href="lib/c3p0-0.9.1-pre6.jar" size="531005" download="eager" />
+    <jar href="lib/jboss-common-jdbc-wrapper-src.jar" size="35342" download="eager" />
+    <jar href="lib/jboss-common-jdbc-wrapper.jar" size="50184" download="eager" />
+    <jar href="lib/mysql-connector-java-5.1.23-bin.jar" size="834091" download="eager" />
+    <jar href="lib/mysql-connector-java-6.0.5-bin.jar" size="1891239" download="eager" />
+    <jar href="lib/protobuf-java-2.6.0.jar" size="593799" download="eager" />
+    <jar href="lib/slf4j-api-1.6.1.jar" size="25496" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="ClickMe" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="clickme.ClickMe"  name="ClickMe" />
+  <update check="always"/>
+</jnlp>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="clickme.FXMLDocumentController">
+    <children>
+        <Button fx:id="button" layoutX="538.0" layoutY="260.0" onAction="#handleButtonAction" prefHeight="26.0" prefWidth="48.0" text="Add" />
+      <TableView fx:id="table" layoutX="4.0" prefHeight="246.0" prefWidth="593.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <columns>
+          <TableColumn fx:id="columnNames" prefWidth="177.0" text="Names" />
+          <TableColumn fx:id="columnEmail" prefWidth="142.0" text="Email" />
+            <TableColumn fx:id="columnAge" prefWidth="142.0" text="Age" />
+            <TableColumn fx:id="columnCity" minWidth="3.0" prefWidth="92.0" text="City" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <TextField fx:id="inputNames" layoutX="14.0" layoutY="260.0" prefHeight="26.0" prefWidth="155.0" promptText="Names" />
+      <TextField fx:id="inputEmail" layoutX="189.0" layoutY="260.0" prefHeight="26.0" prefWidth="111.0" promptText="Email" />
+      <TextField fx:id="inputAge" layoutX="316.0" layoutY="260.0" prefHeight="26.0" prefWidth="72.0" promptText="Age" />
+      <TextField fx:id="inputCity" layoutX="410.0" layoutY="260.0" prefHeight="26.0" prefWidth="98.0" promptText="City" />
+    </children>
+</AnchorPane>
