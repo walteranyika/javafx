@@ -38,7 +38,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="labelError" layoutX="320.0" layoutY="271.0" prefHeight="16.0" prefWidth="216.0" text="Please Fill All The Fields " textAlignment="CENTER" textFill="#f20606" visible="false" />
+      <Label fx:id="labelError" layoutX="336.0" layoutY="271.0" prefHeight="16.0" prefWidth="186.0" text="Please Fill All The Fields " textAlignment="CENTER" textFill="#f20606" visible="false" AnchorPane.topAnchor="245.0" />
       <Button layoutX="336.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleViewProductsBtn" prefHeight="26.0" prefWidth="186.0" text="View Products" />
    </children>
 </AnchorPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="pos.FXMLReceiptController">
+   <children>
+      <TextArea fx:id="textArea" editable="false" layoutX="15.0" layoutY="14.0" prefHeight="292.0" prefWidth="376.0" wrapText="true" />
+      <Button layoutX="15.0" layoutY="310.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="166.0" text="OK" />
+      <Button layoutX="203.0" layoutY="310.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="188.0" text="Cancel" />
+   </children>
+</AnchorPane>

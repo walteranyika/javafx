@@ -9,11 +9,11 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -22,7 +22,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -115,7 +117,7 @@ public class FXMLViewProductsController implements Initializable {
         x.setTotal(x.getQty()*x.getPrice());
         }
         collection.set(pos, x);  
-        System.out.println(x.getQty()+" x "+x.getPrice());
+        //System.out.println(x.getQty()+" x "+x.getPrice());
        
         
     }
@@ -130,7 +132,7 @@ public class FXMLViewProductsController implements Initializable {
         x.setTotal(x.getQty()*x.getPrice());
         }
         collection.set(pos, x);      
-         System.out.println(x.getQty()+" x "+x.getPrice());
+        // System.out.println(x.getQty()+" x "+x.getPrice());
     }
     @FXML
     private void handleRemove(ActionEvent event)
@@ -138,5 +140,42 @@ public class FXMLViewProductsController implements Initializable {
         int pos=table.getSelectionModel().getSelectedIndex();
          collection.remove(pos);  
          table.getSelectionModel().select(pos);
+    }
+    @FXML
+    private void handlePrint(ActionEvent event)
+    {
+        ReceiptPrinter printer=new ReceiptPrinter();
+        printer.printTitle();
+        for(Item item :collection)
+        {
+         printer.print(item.getName(), item.getQty(), item.getTotal());         
+        }
+        printer.printTotal();
+        System.out.println(printer.getReceipt());
+        try {
+            showReceipt(printer.getReceipt());
+        } catch (IOException ex) {
+            Logger.getLogger(FXMLViewProductsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    private void showReceipt(String receipt) throws IOException
+    {
+        POSMain.setReceipt(receipt);
+        FXMLLoader loader=new FXMLLoader();
+        loader.setLocation(getClass().getResource("FXMLReceipt.fxml"));
+        AnchorPane page= (AnchorPane)loader.load();
+
+        Stage dialogStage=new Stage();
+        dialogStage.setTitle("Receipt");
+        dialogStage.initModality(Modality.WINDOW_MODAL);
+        dialogStage.initOwner(POSMain.getMainStage());
+
+        Scene scene=new Scene(page);
+        dialogStage.setScene(scene);
+
+        dialogStage.showAndWait();   
+        
+    
     }
 }

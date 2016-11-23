@@ -8,6 +8,8 @@ package pos;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.property.StringProperty;
+import javafx.beans.value.ChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,6 +47,13 @@ public class FXMLHomeController implements Initializable {
        category.getItems().add("Soft Drinks");
        category.getItems().add("Spirits");
        category.getItems().add("Wines");
+       
+       ChangeListener<String> forceNumberListener = (observable, oldValue, newValue) -> {
+        if (!newValue.matches("\\d*"))
+          ((StringProperty) observable).set(oldValue);
+         };
+       inputPrice.textProperty().addListener(forceNumberListener);
+       inputQty.textProperty().addListener(forceNumberListener);
        
     }   
     

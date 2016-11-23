@@ -52,5 +52,6 @@
       <Button layoutX="401.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleRemove" prefHeight="26.0" prefWidth="118.0" text="Remove " AnchorPane.bottomAnchor="14.0" />
       <Button layoutX="289.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleIncrement" prefHeight="26.0" prefWidth="106.0" text="Increase Qty" AnchorPane.bottomAnchor="14.0" />
       <Button layoutX="154.0" layoutY="310.0" mnemonicParsing="false" onAction="#handleDecrement" prefHeight="26.0" prefWidth="118.0" text="Decrease Qty" AnchorPane.bottomAnchor="14.0" />
+      <Button layoutX="14.0" layoutY="310.0" mnemonicParsing="false" onAction="#handlePrint" prefHeight="26.0" prefWidth="118.0" text="Print Receipt" AnchorPane.bottomAnchor="14.0" />
    </children>
 </AnchorPane>

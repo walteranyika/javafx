@@ -16,15 +16,30 @@ import javafx.stage.Stage;
  * @author waltersanchez
  */
 public class POSMain extends Application {
-    
+    static Stage mainStage;
+    static String data="";
     @Override
     public void start(Stage stage) throws Exception {
+        this.mainStage=stage;
         Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));        
         Scene scene = new Scene(root);        
-        stage.setScene(scene);
-        stage.show();
+        mainStage.setScene(scene);
+        mainStage.show();
     }
-
+    
+    public static void setReceipt(String text) {
+        data=text;
+    }
+    
+    public static String getReceipt()
+    {
+     return data;
+    }
+    
+    
+    public static Stage getMainStage() {
+        return mainStage;
+    }
     /**
      * @param args the command line arguments
      */
